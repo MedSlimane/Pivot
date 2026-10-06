@@ -1,0 +1,6 @@
+# Build output — rebuild with ./build.sh
+Pivot.app/
+build/
+Assets/icon-1024.png
+*.dmg
+.DS_Store
