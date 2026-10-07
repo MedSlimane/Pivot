@@ -1,0 +1,23 @@
+name: build
+on: [push, pull_request]
+jobs:
+  macos:
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: ./build.sh
+        working-directory: macos
+      - uses: actions/upload-artifact@v4
+        with:
+          name: Pivot.app
+          path: macos/Pivot.app
+  windows:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: .\build.ps1
+        working-directory: windows
+      - uses: actions/upload-artifact@v4
+        with:
+          name: Pivot.exe
+          path: windows/Pivot.exe
